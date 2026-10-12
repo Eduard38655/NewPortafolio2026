@@ -1,0 +1,37 @@
+{
+  "welcome": "Welcome",
+  "home": "Home",
+  "about": "About us",
+  "contact": "Contact",
+  "projects": "Projects",
+  "experience": "Experience",
+  "skills": "Skills",
+  "Lenguage": "Lenguage",
+  "name": "Eduardo Ferreras",
+  "tittle": "Full Stack Web Developer",
+ 
+   "years_experience": " 1 year of experience",
+   "skills": "Skills",
+   "grettings": "Hi, I'm",
+   "description": "I am a full stack web developer with experience in creating modern and scalable web applications. I am passionate about learning new technologies and constantly improving my skills."
+  ,"view_my_work": "View My Work",
+  "les_connect": "Let's Connect",
+   "things_i_work_ with":"cosas conlas que trabaje",
+     "Projects_I've_built":"Proyectos que he constrouido",
+       "selected_work":"Trajabajos seleccionadso",
+         "Live_Demo":"LIVE DEMO",
+         "Descargar_CV": "Download CV",
+         "what_can_i_build": "que puedo construir",
+         "services": "Servicios",
+         "home":"inicio",
+         "about":"accerca",
+         "desing":"Designed & Built with code. © 2026",
+         "cancel" :"Cancelar",
+         "copy_email":"Copiar Email",
+         "email_tittle_dialog":"Contacttame "
+         
+
+
+
+
+  }

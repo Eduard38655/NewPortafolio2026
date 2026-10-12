@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+@theme {
+  --animate-float: float 2s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+@theme inline {
+    --font-outfit: "Outfit", sans-serif;
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+
+  --color-header: var(--bg-header);
+  --color-button: var(--bg-button);
+  --color-button2: var(--bg-button2);
+  --color-button-hover: var(--bg-button-hover);
+  --color-button4: var(--bg-button4);
+  --color-button5: var(--bg-button5);
+  --color-button6: var(--bg-button6);
+  --color-button7: var(--bg-button7);
+   --color-gray-color: var(--bg-gray-color);
+}
+
+/* 1. Violete: verde */
+[data-theme="violeta"] {
+  --bg-button4: #1D283A;
+  --bg-button5: #1E2933;
+  --bg-button7: #262626;
+  --bg-button6: #34D399;
+  --bg-button: #8B5CF6;
+  --bg-button2: #F472B6;
+  --bg-button-hover: #FBBF24;
+  --bg-header: #FFFDF5;
+  --bg-gray-color:#a3a7a6;
+}
+
+/* 2. Ocean: azul */
+[data-theme="ocean"] {
+  --bg-button4: #1D283A;
+  --bg-button5: #1E2933;
+  --bg-button7: #262626;
+  --bg-button6: #34D399;
+  --bg-button: #8B5CF6;
+  --bg-button2: #F472B6;
+  --bg-button-hover: #FBBF24;
+  --bg-header: #FFFDF5;
+}
+
+/* 3. Sunset: naranja */
+[data-theme="Atardecer"] {
+  --primary: #14B8A6;
+  --background: #FFF7F0;
+  --foreground: #1D283A;
+  --surface: #FFFDF5;
+  --border: #14B8A6;
+
+  --bg-header: #FFFDF5;
+  --bg-button: #14B8A6;
+  --bg-button2: #EC4899;
+  --bg-button-hover: #FACC15;
+  --bg-button4: #1D283A;
+  --bg-button5: #262626;
+  --bg-button6: #F97316;
+  --bg-button7: #3B1F2B;
+}
+
+/* 4. Royal: violeta */
+[data-theme="Bosque"] {
+  --primary: #059669;
+  --background: #F6FBF6;
+  --foreground: #14301F;
+  --surface: #FFFDF5;
+  --border: #059669;
+
+  --bg-header: #FFFDF5;
+  --bg-button: #059669;
+  --bg-button2: #0EA5E9;
+  --bg-button-button-hover: #F59E0B;
+  --bg-button4: #14301F;
+  --bg-button5: #262626;
+  --bg-button6: #84CC16;
+  --bg-button7: #1D283A;
+}
+
+[data-theme="Grafitos"] {
+
+ --primary: #F59E0B;
+  --background: #18181B;
+  
+  
+  --surface: #262626;
+  --border: #3F3F46;
+
+  --bg-header: #FAFAF9;
+  --bg-button: #F59E0B;
+  --bg-button2: #71717A;
+  --bg-button-hover: #A1A1AA;
+  --bg-button4: #1D283A;
+  --bg-button5: #262626;
+  --bg-button6: #3F3F46;
+  --bg-button7: #FFFDF5;
+}

@@ -1,0 +1,27 @@
+{
+  "welcome": "Bienvenido",
+  "home": "Inicio",
+  "about": "Sobre nosotros",
+  "contact": "Contacto",
+  "projects": "Proyectos",
+ 
+  "skills": "Habilidades",
+  "Lenguage": "Lenguage",
+   "name": "Eduardo Ferreras",
+   "tittle": "Desarrollador Web Full Stack",
+   "experience": "Experiencia",
+   "years_experience": " 1 año de experiencia",
+   "skills": "Habilidades",
+   "grettings": "Hola, Soy",
+   "description": "Soy un desarrollador web full stack con experiencia en la creación de aplicaciones web modernas y escalables. Me apasiona aprender nuevas tecnologías y mejorar mis habilidades constantemente."
+  ,"view_my_work": "Ver mi trabajo",
+  "les_connect": "Conectemos",
+  "things_i_work_ with":"cosas conlas que trabaje",
+  "Projects_I've_built":"Proyectos que he constrouido",
+  "selected_work":"Trajabajos seleccionadso",
+  "Live_Demo":"LIVE DEMO",
+  "Descargar_CV": "Descargar CV"
+  
+  
+  
+  }
