@@ -11,7 +11,7 @@ interface ChooseColor {
 export const useChangePalette = create<ChooseColor>()(
   persist(
     (set) => ({
-      nombre: "violete",
+      nombre: "violeta",
       loading: false,
       error: "",
 

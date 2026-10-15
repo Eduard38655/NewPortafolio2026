@@ -39,7 +39,8 @@ function HeaderMenu() {
       {showDialog && <DialogEmail />}
       <header
         data-theme={nombrePaleta}
-        className="z-1 border-b-2  flex flex-row items-center justify-around self-center p-4 bg-header font-outfit sticky top-0"
+        className="z-1 border-b-2  flex flex-row items-center justify-around self-center p-4 bg-header font-outfit sticky top-0
+        "
       >
         <div className="flex flex-row items-center  gap-3">
           <img
@@ -53,15 +54,13 @@ function HeaderMenu() {
         <nav>
           <ul className="flex flex-row gap-2 text-base font-medium items-center">
             {Bar.map((nav, index) => (
-              <>
-                <li
-                  key={index}
-                  onClick={() => SetSelect(nav.route)}
-                  className={`${selected == nav.route ? "bg-button-hover p-2 rounded-b-lg" : " hover:bg-button-hover p-2 rounded-full"}`}
-                >
-                  <a href={t(nav.route)}> {t(nav.nombre)}</a>
-                </li>
-              </>
+              <li
+                key={index}
+                onClick={() => SetSelect(nav.route)}
+                className={`${selected == nav.route ? "bg-button-hover p-2 rounded-b-lg" : " hover:bg-button-hover p-2 rounded-full"}`}
+              >
+                <a href={t(nav.route)}> {t(nav.nombre)}</a>
+              </li>
             ))}
           </ul>
         </nav>
@@ -115,10 +114,10 @@ function HeaderMenu() {
             {SowPalette && (
               <div className="w-1/5  mt-5 mr-50  border-2 rounded-2xl flex flex-col     gap-0 absolute z-10 pl-3 pr-3 p-3 bg-header">
                 <span className="text-base font-medium p-0"> Palleta</span>
-                {Palette.map((item) => (
+                {Palette.map((item, index) => (
                   <button
                     type="button"
-                    key={item.nombre}
+                    key={index}
                     onClick={() => {
                       cargarColor(item.nombre);
                       setSowPalette(false);

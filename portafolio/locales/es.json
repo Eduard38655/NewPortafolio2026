@@ -1,27 +1,36 @@
 {
   "welcome": "Bienvenido",
   "home": "Inicio",
-  "about": "Sobre nosotros",
+  "about": "Sobre mí",
   "contact": "Contacto",
   "projects": "Proyectos",
- 
+  "experience": "Experiencia",
   "skills": "Habilidades",
-  "Lenguage": "Lenguage",
-   "name": "Eduardo Ferreras",
-   "tittle": "Desarrollador Web Full Stack",
-   "experience": "Experiencia",
-   "years_experience": " 1 año de experiencia",
-   "skills": "Habilidades",
-   "grettings": "Hola, Soy",
-   "description": "Soy un desarrollador web full stack con experiencia en la creación de aplicaciones web modernas y escalables. Me apasiona aprender nuevas tecnologías y mejorar mis habilidades constantemente."
-  ,"view_my_work": "Ver mi trabajo",
+  "Lenguage": "Idioma",
+  "name": "Eduardo Ferreras",
+  "tittle": "Desarrollador web full stack",
+  "years_experience": "1 año de experiencia",
+  "grettings": "Hola, soy",
+  "description": "Soy un desarrollador web full stack que crea aplicaciones web modernas y escalables. Me apasiona aprender nuevas tecnologías y mejorar continuamente mis habilidades.",
+  "view_my_work": "Ver mi trabajo",
   "les_connect": "Conectemos",
-  "things_i_work_ with":"cosas conlas que trabaje",
-  "Projects_I've_built":"Proyectos que he constrouido",
-  "selected_work":"Trajabajos seleccionadso",
-  "Live_Demo":"LIVE DEMO",
-  "Descargar_CV": "Descargar CV"
-  
-  
-  
-  }
+  "things_i_work_ with": "Tecnologías con las que he trabajado",
+  "Projects_I've_built": "Proyectos que he construido",
+  "selected_work": "Trabajos seleccionados",
+  "Live_Demo": "Ver demostración",
+  "Descargar_CV": "Descargar CV",
+  "what_can_i_build": "Qué puedo desarrollar",
+  "services": "Servicios",
+  "desing": "Diseñado y desarrollado con código. © 2026",
+  "cancel": "Cancelar",
+  "copy_email": "Copiar correo electrónico",
+  "email_tittle_dialog": "Contáctame",
+  "proyect-nom-1": "SPS Software",
+  "proyect-dec-1": "Sitio web enfocado en presentar soluciones y servicios de software mediante una interfaz moderna desarrollada con React y CSS.",
+  "proyect-nom-2": "AutoMundo",
+  "proyect-dec-2": "Plataforma web enfocada en el sector automotriz, diseñada para mostrar vehículos mediante una interfaz intuitiva y tecnologías como React, Node.js y PostgreSQL.",
+  "proyect-nom-3": "Global Gazette",
+  "proyect-dec-3": "Blog desarrollado con React que presenta artículos y contenido de manera organizada, con una interfaz moderna y una experiencia de navegación sencilla.",
+  "proyect-nom-4": "GourmetGO",
+  "proyect-dec-4": "Plataforma de comercio electrónico enfocada en productos gastronómicos, con una interfaz moderna que permite explorar productos y disfrutar de una experiencia de compra en línea."
+}
