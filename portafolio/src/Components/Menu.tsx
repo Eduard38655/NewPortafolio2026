@@ -1,12 +1,12 @@
-import { IoIosColorPalette } from "react-icons/io";
 import { useState } from "react";
-import { Palette } from "../../Data/Paleta.js";
 import { useTranslation } from "react-i18next";
+import { IoIosColorPalette } from "react-icons/io";
+import { Palette } from "../../Data/Paleta";
 import { useChangePalette } from "../../store/useChangePalette";
 import DialogEmail from "../Components/DialogEmail.js";
-import MenuImgProfile from "../../public/MenuImgProfile.png";
 function HeaderMenu() {
-  const [SowPalette, setSowPalette] = useState<boolean>(false);
+  const [showPalette, setShowPalette] = useState<boolean>(false);
+  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
   const { t, i18n } = useTranslation();
 
@@ -32,140 +32,143 @@ function HeaderMenu() {
     Palette.find((item) => item.nombre === nombrePaleta) ?? Palette[0];
 
   const [showDialog, SetDialog] = useState<boolean>(false);
-  const [selected, SetSelect] = useState<string>("#about");
 
   return (
     <>
-      {showDialog && <DialogEmail />}
+      {showDialog && <DialogEmail onClose={() => SetDialog(false)} />}
       <header
         data-theme={nombrePaleta}
-        className="z-1 border-b-2  flex flex-row items-center justify-around self-center p-4 bg-header font-outfit sticky top-0
-        "
+        className="sticky top-0 z-40 flex flex-wrap items-center justify-between gap-3 border-b-2 bg-surface-header px-4 py-3 font-outfit sm:px-6"
       >
-        <div className="flex flex-row items-center  gap-3">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
           <img
-            src={MenuImgProfile}
+            src="/MenuImgProfile.png"
             alt=""
-            className="w-[50px] h-[50px] object-cover p-[5px]"
+            width="50"
+            height="50"
+            className="size-10 shrink-0 object-cover p-1 sm:size-12.5"
           />
-          {""}
-          <h1 className="font-bold text-lg text-align">{t("name")}</h1>
+          <p className="truncate text-base font-bold sm:text-lg">{t("name")}</p>
         </div>
-        <nav>
-          <ul className="flex flex-row gap-2 text-base font-medium items-center">
-            {Bar.map((nav, index) => (
-              <li
-                key={index}
-                onClick={() => SetSelect(nav.route)}
-                className={`${selected == nav.route ? "bg-button-hover p-2 rounded-b-lg" : " hover:bg-button-hover p-2 rounded-full"}`}
-              >
-                <a href={t(nav.route)}> {t(nav.nombre)}</a>
+        <nav
+          id="main-navigation"
+          aria-label={t("main_navigation")}
+          className={`${mobileOpen ? "block" : "hidden"} absolute left-0 right-0 top-full border-b-2 bg-surface-header px-4 py-3 shadow-md md:static md:block md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+        >
+          <ul className="flex flex-col gap-1 text-base font-medium md:flex-row md:items-center md:gap-2">
+            {Bar.map((nav) => (
+              <li key={nav.nombre}>
+                <a
+                  href={nav.route}
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-full px-3 py-2 transition-colors hover:bg-action-hover focus-visible:bg-action-hover"
+                >
+                  {t(nav.nombre)}
+                </a>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className="flex flex-row gap-5 items-center justify-between">
-          <div className=" cursor-pointer p-2  pl-2 pr-2 rounded-full shadow-[5px_3px_0px_0px_#1D283A] border-2">
-            <div
-              onClick={() => setSowPalette((prev) => !prev)}
-              className=" flex flex-row gap-3  justify-center   items-center  "
+        <div className="ml-auto flex items-center gap-2 sm:gap-3">
+          <div className="relative">
+            <button
+              type="button"
+              aria-expanded={showPalette}
+              aria-label={t("color_palette")}
+              onClick={() => setShowPalette((previous) => !previous)}
+              className="flex items-center gap-2 rounded-full border-2 px-2 py-2 text-sm font-medium shadow-[3px_3px_0px_0px_#1D283A] sm:px-3"
             >
-              <button
-                type="button"
-                className="text-sm font-normal cursor-pointer "
-              >
-                <span className="flex flex-row  gap-2 items-center text-base font-medium">
-                  <IoIosColorPalette /> Colors
-                </span>
-              </button>
-
+              <IoIosColorPalette aria-hidden="true" />
+              <span className="hidden sm:inline">{t("colors")}</span>
               <div className="flex flex-row gap-1 text-lg  ">
                 <span
-                  className="w-3 h-3 rounded-full inline-block border-1 "
+                  className="inline-block h-3 w-3 rounded-full border"
                   style={{
                     backgroundColor: selectedColor.color1,
                   }}
                 />
 
                 <span
-                  className="w-3 h-3 rounded-full inline-block border-1"
+                  className="inline-block h-3 w-3 rounded-full border"
                   style={{
                     backgroundColor: selectedColor.color2,
                   }}
                 />
 
                 <span
-                  className="w-3 h-3 rounded-full inline-block border-1"
+                  className="inline-block h-3 w-3 rounded-full border"
                   style={{
                     backgroundColor: selectedColor.color3,
                   }}
                 />
 
                 <span
-                  className="w-3 h-3 rounded-full inline-block border-1"
+                  className="inline-block h-3 w-3 rounded-full border"
                   style={{
                     backgroundColor: selectedColor.color4,
                   }}
                 />
               </div>
-            </div>
+            </button>
 
-            {SowPalette && (
-              <div className="w-1/5  mt-5 mr-50  border-2 rounded-2xl flex flex-col     gap-0 absolute z-10 pl-3 pr-3 p-3 bg-header">
-                <span className="text-base font-medium p-0"> Palleta</span>
-                {Palette.map((item, index) => (
+            {showPalette && (
+              <div className="absolute right-0 top-full z-50 mt-2 flex w-64 max-w-[calc(100vw-2rem)] flex-col gap-1 rounded-2xl border-2 bg-surface-header p-3 shadow-lg">
+                <span className="p-1 text-sm font-medium">{t("color_palette")}</span>
+                {Palette.map((item) => (
                   <button
                     type="button"
-                    key={index}
+                    key={item.nombre}
                     onClick={() => {
                       cargarColor(item.nombre);
-                      setSowPalette(false);
+                      setShowPalette(false);
                     }}
-                    className={`  flex flex-row items-center cursor-pointer rounded-lg gap-4 p-2  hover:bg-button-hover transition-colors ${nombrePaleta === item.nombre ? "bg-button6 border-2" : ""}`}
+                    className={`  flex flex-row items-center cursor-pointer rounded-lg gap-4 p-2  hover:bg-action-hover transition-colors ${nombrePaleta === item.nombre ? "bg-accent-tertiary border-2" : ""}`}
                   >
                     <div className="flex flex-row items-center gap-1   ">
                       <span
-                        className="inline-block w-4 h-4 rounded-full shrink-0 border-1 text-sm"
+                        className="inline-block h-4 w-4 shrink-0 rounded-full border text-sm"
                         style={{ backgroundColor: item.color1 }}
                       />
 
                       <span
-                        className="inline-block w-4 h-4 rounded-full shrink-0 border-1"
+                        className="inline-block h-4 w-4 shrink-0 rounded-full border"
                         style={{ backgroundColor: item.color2 }}
                       />
 
                       <span
-                        className="inline-block w-4 h-4 rounded-full shrink-0 border-1"
+                        className="inline-block h-4 w-4 shrink-0 rounded-full border"
                         style={{ backgroundColor: item.color3 }}
                       />
 
                       <span
-                        className="inline-block w-4 h-4 rounded-full shrink-0 border-1"
+                        className="inline-block h-4 w-4 shrink-0 rounded-full border"
                         style={{ backgroundColor: item.color4 }}
                       />
                     </div>
-                    <h3 className="text-left">{item.nombre}</h3>
+                    <span className="text-left">{item.nombre}</span>
                   </button>
                 ))}
               </div>
             )}
           </div>
 
-          <div className="flex items-center gap-5 h-10">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               type="button"
               onClick={() => SetDialog(true)}
-              className="text-base cursor-pointer  rounded-full p-2  pl-2 pr-2 bg-button text-header shadow-[5px_3px_0px_0px_#1D283A] border-2"
+              className="cursor-pointer rounded-full border-2 bg-action-primary px-3 py-2 text-sm text-surface-header shadow-[3px_3px_0px_0px_#1D283A] sm:px-4 sm:text-base"
             >
               {t("contact")}
             </button>
 
-            <div className="p-2 pl-2 pr-2 rounded-full font-medium text-base cursor-pointer shadow-[5px_3px_0px_0px_#1D283A] border-2">
+            <label className="sr-only" htmlFor="language-select">{t("language")}</label>
+            <div className="rounded-full border-2 px-2 py-2 text-sm font-medium shadow-[3px_3px_0px_0px_#1D283A] sm:text-base">
               <select
+                id="language-select"
                 value={i18n.resolvedLanguage ?? i18n.language}
                 onChange={(e) => changeLanguage(e.target.value)}
-                className="border-none  w-full focus:outline-none cursor-pointer"
+                className="w-full cursor-pointer border-none bg-transparent focus:outline-none"
               >
                 {lenguajes.map((lang) => (
                   <option key={lang.code} value={lang.code}>
@@ -174,6 +177,16 @@ function HeaderMenu() {
                 ))}
               </select>
             </div>
+            <button
+              type="button"
+              aria-label={mobileOpen ? t("close_menu") : t("open_menu")}
+              aria-expanded={mobileOpen}
+              aria-controls="main-navigation"
+              onClick={() => setMobileOpen((previous) => !previous)}
+              className="rounded-lg border-2 px-3 py-2 text-sm font-semibold md:hidden"
+            >
+              {mobileOpen ? "×" : "☰"}
+            </button>
           </div>
         </div>
       </header>

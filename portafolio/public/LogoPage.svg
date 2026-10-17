@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <style>
+    .code {
+      font-family: 'Courier New', monospace;
+      font-size: 170px;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+  </style>
+
+  <text x="200" y="100" class="code">
+    <tspan fill="#a6e3a1">&lt;</tspan><tspan fill="#f38ba8">/</tspan><tspan fill="#a6e3a1">&gt;</tspan>
+  </text>
+</svg>

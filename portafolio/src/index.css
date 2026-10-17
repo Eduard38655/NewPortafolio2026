@@ -1,9 +1,18 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @import "tailwindcss";
+
+/* ========================================
+   ANIMACIONES Y TIPOGRAFÍA
+======================================== */
+
 @theme {
+  --font-outfit: "Outfit", sans-serif;
+
   --animate-float: float 2s ease-in-out infinite;
---animate-shake: shake 0.5s ease-in-out infinite;
+  --animate-shake: shake 0.5s ease-in-out infinite;
+
   @keyframes float {
     0%, 100% {
       transform: translateY(0);
@@ -13,155 +22,272 @@
     }
   }
 
-
-
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    75% {
+      transform: translateX(5px);
+    }
   }
 }
-}
 
-
-
+/* ========================================
+   VARIABLES PARA TAILWIND CSS 4
+======================================== */
 
 @theme inline {
-    --font-outfit: "Outfit", sans-serif;
-  --color-primary: var(--primary);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-border: var(--border);
+  --color-accent-primary: var(--accent-primary);
+  --color-canvas: var(--canvas);
+  --color-outline-strong: var(--outline-strong);
+  --color-surface-primary: var(--surface-primary);
+  --color-outline: var(--outline);
 
-  --color-header: var(--bg-header);
-  --color-button: var(--bg-button);
-  --color-button2: var(--bg-button2);
-  --color-button-hover: var(--bg-button-hover);
-  --color-button4: var(--bg-button4);
-  --color-button5: var(--bg-button5);
-  --color-button6: var(--bg-button6);
-  --color-button7: var(--bg-button7);
-   --color-gray-color: var(--bg-gray-color);
-     ---text-color: var(--text-color);
-       --color-icon-color: var(--icon-color);
-  --color-icon-color2: var(--icon-color2);
-  --color-icon-color3: var(--icon-color3);
+  --color-surface-header: var(--surface-header);
+  --color-action-primary: var(--action-primary);
+  --color-action-secondary: var(--action-secondary);
+  --color-action-hover: var(--action-hover);
+  --color-contrast-strong: var(--contrast-strong);
+  --color-surface-footer: var(--surface-footer);
+  --color-accent-tertiary: var(--accent-tertiary);
+  --color-accent-quaternary: var(--accent-quaternary);
+  --color-content-muted: var(--content-muted);
 
-  --color-icon-text: var(--icon-text);
+  --color-content-primary: var(--content-primary);
+  --color-content-secondary: var(--content-secondary);
+
+  --color-icon-surface-primary: var(--icon-surface-primary);
+  --color-icon-surface-secondary: var(--icon-surface-secondary);
+  --color-icon-surface-tertiary: var(--icon-surface-tertiary);
+  --color-icon-content: var(--icon-content);
+
+  --color-service-accent-1: var(--service-accent-1);
+  --color-service-accent-2: var(--service-accent-2);
+  --color-service-accent-3: var(--service-accent-3);
+  --color-service-accent-4: var(--service-accent-4);
 }
 
+/* ========================================
+   1. VIOLETA
+======================================== */
 
-/* 1. Violete: verde */
-[data-theme="violeta"],
-[data-theme="violete"] {
-  --bg-button4: #1D283A;
-  --bg-button5: #1E2933;
-  --bg-button7: #262626;
-  --bg-button6: #34D399;
-  --bg-button: #8B5CF6;
-  --bg-button2: #F472B6;
-  --bg-button-hover: #FBBF24;
-  --bg-header: #FFFDF5;
-  --bg-gray-color:#a3a7a6;
+[data-theme="violeta"] {
+  --pattern-dot: #E9D5FF;
+  --accent-primary: #8B5CF6;
+  --canvas: #FFF7F0;
+  --outline-strong: #1D283A;
+  --surface-primary: #FFFDF5;
+  --outline: #E9D5FF;
 
-  --icon-color: #eee7fe;
-   --icon-color2: #feeaf4;
-    --icon-color3: #d6f6eb;
-  --icon-text: #1D283A;
-  --icons-section-services:#8b5cf6;
-    --icons-section-services2:#f472b6;
-      --icons-section-services3:#fbbf24;
-        --icons-section-services4:#34d399;
-        --body-background: #fff7f0;
-        --text-color2:#b6bdba;
-        /*Black color #646C73*/
+  --surface-header: #FFFDF5;
+  --action-primary: #8B5CF6;
+  --action-secondary: #F472B6;
+  --action-hover: #FBBF24;
+  --contrast-strong: #1D283A;
+  --surface-footer: #1E2933;
+  --accent-tertiary: #34D399;
+  --accent-quaternary: #262626;
+  --content-muted: #A3A7A6;
+
+  --content-primary: #1D283A;
+  --content-secondary: #646C73;
+
+  --icon-surface-primary: #EEE7FE;
+  --icon-surface-secondary: #FEEAF4;
+  --icon-surface-tertiary: #D6F6EB;
+  --icon-content: #1D283A;
+
+  --service-accent-1: #8B5CF6;
+  --service-accent-2: #F472B6;
+  --service-accent-3: #FBBF24;
+  --service-accent-4: #34D399;
 }
 
-/* 2. Ocean: azul */
+/* ========================================
+   2. OCEAN
+======================================== */
+
 [data-theme="ocean"] {
-  --bg-button4: #1D283A;
-  --bg-button5: #1E2933;
-  --bg-button7: #262626;
-  --bg-button6: #34D399;
-  --bg-button: #8B5CF6;
-  --bg-button2: #F472B6;
-  --bg-button-hover: #FBBF24;
-  --bg-header: #FFFDF5;
-  --icon-color: #DBEAFE;
-  --icon-color2: #CFFAFE;
-  --icon-color3: #D1FAE5;
-  --icon-text: #1E293B;
+  --pattern-dot: #BAE6FD;
+  --accent-primary: #0284C7;
+  --canvas: #F0F9FF;
+  --outline-strong: #0F172A;
+  --surface-primary: #FFFFFF;
+  --outline: #BAE6FD;
+
+  --surface-header: #FFFFFF;
+  --action-primary: #0284C7;
+  --action-secondary: #06B6D4;
+  --action-hover: #FBBF24;
+  --contrast-strong: #0F172A;
+  --surface-footer: #1E293B;
+  --accent-tertiary: #34D399;
+  --accent-quaternary: #262626;
+  --content-muted: #94A3B8;
+
+  --content-primary: #0F172A;
+  --content-secondary: #64748B;
+
+  --icon-surface-primary: #DBEAFE;
+  --icon-surface-secondary: #CFFAFE;
+  --icon-surface-tertiary: #D1FAE5;
+  --icon-content: #0F172A;
+
+  --service-accent-1: #0284C7;
+  --service-accent-2: #06B6D4;
+  --service-accent-3: #34D399;
+  --service-accent-4: #FBBF24;
 }
 
-/* 3. Sunset: naranja */
+/* ========================================
+   3. ATARDECER
+======================================== */
+
 [data-theme="Atardecer"] {
-  --primary: #14B8A6;
-  --background: #FFF7F0;
-  --foreground: #1D283A;
-  --surface: #FFFDF5;
-  --border: #14B8A6;
+  --pattern-dot: #99F6E4;
+  --accent-primary: #14B8A6;
+  --canvas: #FFF7F0;
+  --outline-strong: #1D283A;
+  --surface-primary: #FFFDF5;
+  --outline: #99F6E4;
 
-  --bg-header: #FFFDF5;
-  --bg-button: #14B8A6;
-  --bg-button2: #EC4899;
-  --bg-button-hover: #FACC15;
-  --bg-button4: #1D283A;
-  --bg-button5: #262626;
-  --bg-button6: #F97316;
-  --bg-button7: #3B1F2B;
-  --icon-color: #CCFBF1;
-  --icon-color2: #FCE7F3;
-  --icon-color3: #FEF3C7;
-  --icon-text: #431407;
+  --surface-header: #FFFDF5;
+  --action-primary: #14B8A6;
+  --action-secondary: #EC4899;
+  --action-hover: #FACC15;
+  --contrast-strong: #1D283A;
+  --surface-footer: #262626;
+  --accent-tertiary: #F97316;
+  --accent-quaternary: #3B1F2B;
+  --content-muted: #A3A7A6;
+
+  --content-primary: #1D283A;
+  --content-secondary: #6B7280;
+
+  --icon-surface-primary: #CCFBF1;
+  --icon-surface-secondary: #FCE7F3;
+  --icon-surface-tertiary: #FEF3C7;
+  --icon-content: #431407;
+
+  --service-accent-1: #14B8A6;
+  --service-accent-2: #EC4899;
+  --service-accent-3: #FACC15;
+  --service-accent-4: #F97316;
 }
 
-/* 4. Royal: violeta */
+/* ========================================
+   4. BOSQUE
+======================================== */
+
 [data-theme="Bosque"] {
-  --primary: #059669;
-  --background: #F6FBF6;
-  --foreground: #14301F;
-  --surface: #FFFDF5;
-  --border: #059669;
+  --pattern-dot: #A7F3D0;
+  --accent-primary: #059669;
+  --canvas: #F6FBF6;
+  --outline-strong: #14301F;
+  --surface-primary: #FFFDF5;
+  --outline: #A7F3D0;
 
-  --bg-header: #FFFDF5;
-  --bg-button: #059669;
-  --bg-button2: #0EA5E9;
-  --bg-button-button-hover: #F59E0B;
-  --bg-button4: #14301F;
-  --bg-button5: #262626;
-  --bg-button6: #84CC16;
-  --bg-button7: #1D283A;
-  --icon-color: #D1FAE5;
-  --icon-color2: #E0F2FE;
-  --icon-color3: #FEF3C7;
-  --icon-text: #14301F;
+  --surface-header: #FFFDF5;
+  --action-primary: #059669;
+  --action-secondary: #0EA5E9;
+  --action-hover: #F59E0B;
+  --contrast-strong: #14301F;
+  --surface-footer: #262626;
+  --accent-tertiary: #84CC16;
+  --accent-quaternary: #1D283A;
+  --content-muted: #9CA3AF;
+
+  --content-primary: #14301F;
+  --content-secondary: #647067;
+
+  --icon-surface-primary: #D1FAE5;
+  --icon-surface-secondary: #E0F2FE;
+  --icon-surface-tertiary: #FEF3C7;
+  --icon-content: #14301F;
+
+  --service-accent-1: #059669;
+  --service-accent-2: #0EA5E9;
+  --service-accent-3: #84CC16;
+  --service-accent-4: #F59E0B;
 }
 
+/* ========================================
+   5. GRAFITOS
+======================================== */
 [data-theme="Grafitos"] {
+  --pattern-dot: #59636D;
+  --accent-primary: #FBBF24;
+  --canvas: #363C43;
+  --outline-strong: #F4F6F8;
+  --surface-primary: #424950;
+  --outline: #606A75;
 
- --primary: #F59E0B;
-  --background: #18181B;
-  
-  
-  --surface: #262626;
-  --border: #3F3F46;
+  --surface-header: #4A525B;
+  --action-primary: #F59E0B;
+  --action-secondary: #89939E;
+  --action-hover: #FCD34D;
+  --contrast-strong: #FFFFFF;
+  --surface-footer: #252A30;
+  --accent-tertiary: #6D5720;
+  --accent-quaternary: #E7E5E4;
+  --content-muted: #D0D5DB;
 
-  --bg-header: #FAFAF9;
-  --bg-button: #F59E0B;
-  --bg-button2: #71717A;
-  --bg-button-hover: #A1A1AA;
-  --bg-button4: #1D283A;
-  --bg-button5: #262626;
-  --bg-button6: #3F3F46;
-  --bg-button7: #FFFDF5;
-  --icon-color: #FEF3C7;
-  --icon-color2: #E4E4E7;
-  --icon-color3: #D4D4D8;
-  --icon-text: #18181B;
+  --content-primary: #F9FAFB;
+  --content-secondary: #E0E5E9;
+
+  --icon-surface-primary: #655222;
+  --icon-surface-secondary: #285B53;
+  --icon-surface-tertiary: #525B64;
+  --icon-content: #FCD34D;
+
+  --service-accent-1: #FBBF24;
+  --service-accent-2: #2DD4BF;
+  --service-accent-3: #FB7185;
+  --service-accent-4: #BEC5CD;
+}
+
+/* ========================================
+   ESTILOS GENERALES
+======================================== */
+
+body {
+  font-family: var(--font-outfit);
+  background-color: var(--canvas);
+  color: var(--content-primary);
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+section[id],
+article[id],
+div[id] {
+  scroll-margin-top: 6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--action-primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

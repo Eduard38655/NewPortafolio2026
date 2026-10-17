@@ -1,30 +1,26 @@
 export const ServicesData = [
   {
     id: 1,
-    title: "Frontend Development",
-    description:
-      "Responsive interfaces using modern frameworks and component-based architecture.",
-    backgroundColor: "bg-button",
+    title: "service_frontend_title",
+    description: "service_frontend_description",
+    backgroundColor: "action-primary",
   },
   {
     id: 2,
-    title: "Web Applications",
-    description:
-      "Interactive applications with APIs, databases and real user flows.",
-    backgroundColor: "bg-button2",
+    title: "service_apps_title",
+    description: "service_apps_description",
+    backgroundColor: "action-secondary",
   },
   {
     id: 3,
-    title: "UI Implementation",
-    description:
-      "Turning designs into responsive, pixel-accurate and accessible interfaces.",
-    backgroundColor: "bg-button6",
+    title: "service_ui_title",
+    description: "service_ui_description",
+    backgroundColor: "accent-tertiary",
   },
   {
     id: 4,
-    title: "Website Optimization",
-    description:
-      "Performance, accessibility and responsive improvements for existing sites.",
-    backgroundColor: "bg-button7",
+    title: "service_optimization_title",
+    description: "service_optimization_description",
+    backgroundColor: "accent-quaternary",
   },
 ];

@@ -1,7 +1,6 @@
 import "i18next";
 import { useTranslation } from "react-i18next";
 import { SocialMedia } from "../../Data/SocialMedia";
-import MenuImgProfile from "../../public/MenuImgProfile.png";
 
 function Footer() {
   const { t } = useTranslation();
@@ -14,47 +13,46 @@ function Footer() {
   ];
   return (
     <>
-      <footer className="flex flex-col items-center justify-center gap-4 bg-body-background py-8 text-center text-sm text-body-text bg-button5">
+      <footer className="flex flex-col items-center justify-center gap-4 bg-surface-footer px-5 py-8 text-center text-sm text-surface-header">
         <div className="flex flex-row items-center gap-4">
           <img
-            src={MenuImgProfile}
+            src="/MenuImgProfile.png"
             alt=""
-            className="w-[50px] h-[50px] object-cover p-[5px]"
+            width="50"
+            height="50"
+            className="size-12.5 object-cover p-1.25"
           />
-          <h3 className="text-2xl font-bold text-color2"> {t("name")}</h3>
+          <p className="text-2xl font-bold">{t("name")}</p>
         </div>
-        <span className="text-gray-color  text-2xl font-bold ">
-          {t("tittle")}
-        </span>
+        <p className="text-content-muted text-xl font-bold sm:text-2xl">
+          {t("title")}
+        </p>
 
-        <ul className="flex flex-row gap-5 text-lg font-semibold text-color2 cursor-pointer  ">
-          {Bar.map((bar, index) => (
-            <li
-              key={index}
-              id={t(bar.route)}
-              className="hover:text-button-hover"
-            >
-              <a href={t(bar.route)}> {t(bar.nombre)}</a>
+        <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-base font-semibold sm:text-lg">
+          {Bar.map((bar) => (
+            <li key={bar.nombre} className="hover:text-action-hover">
+              <a href={bar.route}>{t(bar.nombre)}</a>
             </li>
           ))}
         </ul>
 
         <div className="flex flex-row gap-4">
-          {SocialMedia.map((sm, index) => (
-            <button
-              key={index}
-              className="p-4 rounded-full border-2 cursor-pointer text-xl border-header text-header hover:bg-button-hover hover:text-button5 "
+          {SocialMedia.map((sm) => (
+            <a
+              key={sm.nombre}
+              href={sm.link}
+              aria-label={sm.nombre}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border-2 border-surface-header p-3 text-xl text-surface-header hover:bg-action-hover hover:text-surface-footer"
             >
-              <a href={sm.link} target="_blank">
-                {sm.icons}
-              </a>
-            </button>
+              {sm.icons}
+            </a>
           ))}
         </div>
 
-        <p className="text-color2 font-semibold text-normal">
-          {t("desing")} {t("name")}
-          {"."}
+        <p className="font-semibold">
+          {t("footer_credit")} {t("name")}.
         </p>
       </footer>
     </>

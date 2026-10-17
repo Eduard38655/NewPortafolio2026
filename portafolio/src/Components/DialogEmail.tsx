@@ -1,29 +1,64 @@
-import "i18next";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 
-function DialogEmail(params: type) {
+function DialogEmail({ onClose }: { onClose: () => void }) {
   const { t } = useTranslation();
-  const [Close, SetClose] = useState<boolean>(false);
+  const [copied, setCopied] = useState(false);
+  const email = "eduao154@gmail.com";
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+    } catch {
+      window.location.href = `mailto:${email}`;
+    }
+  };
 
   return (
-    <>
-      <dialog open>
-        <div>
-          <h4>{t("email_tittle_dialog")}</h4>
-          <button onClick={() => SetClose(false)}>x</button>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/40 p-4"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="email-dialog-title"
+        className="flex w-full max-w-sm flex-col gap-5 rounded-xl border-2 border-outline-strong bg-surface-header p-5 shadow-[5px_5px_0px_0px_#1D283A]"
+      >
+        <div className="flex items-center justify-between gap-4">
+          <h2 id="email-dialog-title" className="text-lg font-bold">
+            {t("email_dialog_title")}
+          </h2>
+          <button type="button" onClick={onClose} aria-label={t("cancel")} className="rounded-md px-2 py-1 text-lg hover:bg-action-hover">
+            ×
+          </button>
         </div>
 
-        <div>
-          <div>
-            <a href="mailto:eduao154@gmail.com">eduao154@gmail.com</a>
-          </div>
+        <a href={`mailto:${email}`} className="w-full break-all rounded-lg border-2 bg-surface-header p-3 text-center text-sm text-content-muted">
+          {email}
+        </a>
 
-          <button onClick={() => SetClose(false)}>{t("copy_email")}</button>
-          <button onClick={() => SetClose(false)}>{t("cancel")}</button>
+        <div className="flex flex-wrap justify-center gap-3">
+          <button type="button" onClick={copyEmail} className="rounded-lg bg-action-primary px-4 py-2 text-surface-header">
+            {copied ? t("email_copied") : t("copy_email")}
+          </button>
+          <button type="button" onClick={onClose} className="rounded-lg bg-action-secondary px-4 py-2 text-content-primary">
+            {t("cancel")}
+          </button>
         </div>
-      </dialog>
-    </>
+      </section>
+    </div>
   );
 }
 

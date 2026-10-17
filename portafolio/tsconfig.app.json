@@ -22,5 +22,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "Data/Paleta.js"]
+  "include": ["src", "Data"]
 }

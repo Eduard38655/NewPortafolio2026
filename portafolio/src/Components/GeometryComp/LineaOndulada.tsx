@@ -1,4 +1,4 @@
-function LineaOndulada({ color = "var(--bg-button)" }) {
+function LineaOndulada({ color = "var(--action-primary)" }) {
   return (
     <div className="w-full max-w-64 p-2">
       <svg

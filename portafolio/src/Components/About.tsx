@@ -1,13 +1,19 @@
-import React from "react";
-import { HiOutlineArrowSmallRight } from "react-icons/hi2";
-import { SocialMedia } from "../../Data/SocialMedia.jsx";
 import { useTranslation } from "react-i18next";
-import { RiDownload2Line } from "react-icons/ri";
+import { HiOutlineArrowSmallRight } from "react-icons/hi2";
+import { LuDownload } from "react-icons/lu";
+import { SocialMedia } from "../../Data/SocialMedia";
 import { useChangePalette } from "../../store/useChangePalette";
-import MainPicture from "../../public/MainPicture.png";
-function About(params: type) {
-  const { t } = useTranslation();
+import cvEn from "../Cv/CV - Eduardo Ferreras - EN.pdf";
+import cvEs from "../Cv/CV - Eduardo Ferreras - ES.pdf";
+function About() {
+  const { t, i18n } = useTranslation();
   const nombrePaleta = useChangePalette((state) => state.nombre);
+  const activeLanguage = (i18n.resolvedLanguage ?? i18n.language).split("-")[0];
+  const cvFile = activeLanguage === "en" ? cvEn : cvEs;
+  const cvDownloadName =
+    activeLanguage === "en"
+      ? "Eduardo-Ferreras-CV-EN.pdf"
+      : "Eduardo-Ferreras-CV-ES.pdf";
   const technologies = [
     {
       name: "React",
@@ -47,67 +53,71 @@ function About(params: type) {
   ];
   return (
     <>
-      <section data-theme={nombrePaleta} className="flex flex-row p-10">
-        <div className="flex flex-col  gap-8">
-          <button className="text-sm font-medium bg-header  w-fit flex flex-row rounded-full p-2  border-2 shadow-[5px_3px_0px_0px_#1D283A]">
-            <p id="#about">
-              {" "}
-              {t("tittle")} * {t("years_experience")}
+      <section data-theme={nombrePaleta} className="grid grid-cols-1 items-center gap-10 px-5 py-10 sm:px-8 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-16" id="about">
+        <div className="flex min-w-0 flex-col gap-6 sm:gap-8">
+          <span className="w-fit rounded-full border-2 bg-surface-header p-2 text-sm font-medium shadow-[5px_3px_0px_0px_#1D283A]">
+            {t("title")} · {t("years_experience")}
+          </span>
+          <div className="flex flex-col gap-3 sm:gap-5">
+            <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
+              {t("greeting")} <span className="text-action-primary">{t("name")}</span>
+            </h1>
+            <p className="text-xl font-bold text-content-muted sm:text-2xl">
+              {t("title")}
             </p>
-          </button>
-          <div className="flex flex-col gap-6 ">
-            <h2 className="text-5xl font-bold  ">
-              {t("grettings")} <span className="text-button">{t("name")}</span>
-            </h2>
-            <span className="text-gray-color text-2xl font-bold">
-              {t("tittle")}
-            </span>
           </div>
-          <p className="font-medium text-lg">{t("description")}</p>
-          <div className="flex flex-row gap-5 text-2xl  ">
+          <p className="text-base font-medium leading-relaxed sm:text-lg">{t("description")}</p>
+          <div className="flex flex-col gap-3">
+            <h2 className="text-lg font-bold">{t("languages")}</h2>
+            <ul className="flex flex-wrap gap-2">
+              <li className="rounded-full border-2 border-outline-strong bg-surface-header px-4 py-1.5 text-sm font-semibold shadow-[3px_3px_0px_0px_#1D283A]">
+                {t("language_spanish")}
+              </li>
+              <li className="rounded-full border-2 border-outline-strong bg-surface-header px-4 py-1.5 text-sm font-semibold shadow-[3px_3px_0px_0px_#1D283A]">
+                {t("language_english")}
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-row gap-5 text-2xl">
             {SocialMedia.map((sm, index) => (
-              <button title={sm.nombre} key={index}>
-                {" "}
-                <a
-                  key={index}
-                  href={sm.link}
-                  title={sm.nombre}
-                  aria-label={sm.nombre}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                  text-header
+              <a
+                key={sm.nombre || index}
+                href={sm.link}
+                title={sm.nombre}
+                aria-label={sm.nombre}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
     group inline-flex items-center justify-center
-    rounded-full border-2 border-foreground
-    bg-button p-3
-    text-foreground
+    rounded-full border-2 border-outline-strong
+    bg-action-primary p-3
+    text-content-primary
     shadow-[5px_4px_0px_0px_#1D283A]
     transition-all duration-200 ease-out
     hover:-translate-y-1
-    hover:bg-button-hover
+    hover:bg-action-hover
     hover:shadow-[7px_6px_0px_0px_#1D283A]
     active:translate-y-1
     active:shadow-[2px_2px_0px_0px_#1D283A]
     focus-visible:outline-none
     focus-visible:ring-2
-    focus-visible:ring-primary
+    focus-visible:ring-accent-primary
     focus-visible:ring-offset-2
     [&>svg]:h-6 [&>svg]:w-6
   "
-                >
-                  {sm.icons}
-                </a>
-              </button>
+              >
+                {sm.icons}
+              </a>
             ))}
           </div>
 
-          <div className="flex flex-row items-center gap-4 w-auto">
-            <button
-              type="button"
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="#projects"
               className="
     group inline-flex items-center justify-center gap-3
-    rounded-full border-2 border-foreground
-    bg-button px-6 py-3
+    rounded-full border-2 border-outline-strong
+    bg-action-primary px-6 py-3
     text-lg font-bold text-white
     shadow-[5px_4px_0px_0px_#1D283A]
     transition-all duration-200 ease-out
@@ -117,7 +127,7 @@ function About(params: type) {
     active:translate-y-1
     active:shadow-[2px_2px_0px_0px_#1D283A]
     focus-visible:outline-none
-    focus-visible:ring-2 focus-visible:ring-primary
+    focus-visible:ring-2 focus-visible:ring-accent-primary
     focus-visible:ring-offset-2
     cursor-pointer
   "
@@ -131,35 +141,37 @@ function About(params: type) {
       group-hover:translate-x-1
     "
               />
-            </button>
+            </a>
 
-            <button
-              type="button"
+            <a
+              href={cvFile}
+              download={cvDownloadName}
+              aria-label={t("download_cv")}
               className="
     inline-flex items-center justify-center gap-3
-    rounded-full border-2 border-foreground
+    rounded-full border-2 border-outline-strong
     px-6 py-3
     text-lg font-bold  
     shadow-[5px_4px_0px_0px_#1D283A]
     transition-all duration-200 ease-out
     hover:-translate-y-1
-    hover:bg-button-hover
+    hover:bg-action-hover
     hover:shadow-[7px_6px_0px_0px_#1D283A]
     active:translate-y-1
     active:shadow-[2px_2px_0px_0px_#1D283A]
     focus-visible:outline-none
-    focus-visible:ring-2 focus-visible:ring-primary
+    focus-visible:ring-2 focus-visible:ring-accent-primary
     focus-visible:ring-offset-2
     cursor-pointer
   "
             >
-              <RiDownload2Line className="h-5 w-5 shrink-0 transition-transform duration-200 group-hover:translate-y-0.5" />
-              <span>{t("Descargar_CV")}</span>
-            </button>
+              <LuDownload className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span>{t("download_cv")}</span>
+            </a>
           </div>
         </div>
 
-        <div className="relative isolate mx-auto w-full max-w-2xl px-3 py-4">
+        <div className="relative isolate mx-auto w-full min-w-0 max-w-2xl px-3 py-4 sm:px-5">
           {/* Marco del navegador */}
           <div
             className="
@@ -201,14 +213,14 @@ function About(params: type) {
             <div className="p-3 sm:p-4">
               <div
                 className="
-              aspect-[4/3] overflow-hidden
+              aspect-4/3 overflow-hidden
               rounded-xl border-2 border-[#1D283A]
               bg-[#FFFDF5]
             "
               >
                 <img
-                  src={MainPicture}
-                  alt="Mi fotografía de perfil"
+                  src="/MainPicture.png"
+                  alt={t("profile_image_alt")}
                   className="h-full w-full object-cover object-center"
                 />
               </div>
@@ -242,9 +254,9 @@ function About(params: type) {
                 backgroundColor: tech.color,
                 animationDelay: tech.delay,
               }}
-              className="
+              className="hidden sm:inline-flex
             absolute z-20
-            inline-flex items-center justify-center
+            items-center justify-center
             whitespace-nowrap
             rounded-full border-2 border-[#1D283A]
             px-3 py-1.5
@@ -252,7 +264,7 @@ function About(params: type) {
             shadow-[4px_4px_0px_0px_#1D283A]
             animate-float
             transition-colors duration-300
-            hover:bg-button-hover
+            hover:bg-action-hover
             sm:px-4 sm:py-2 sm:text-sm
           "
             >
