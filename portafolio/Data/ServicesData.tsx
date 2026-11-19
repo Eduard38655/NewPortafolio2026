@@ -1,4 +1,12 @@
-export const ServicesData = [
+type Service = {
+  id: number;
+  title: string;
+  description: string;
+  backgroundColor: string;
+  iconColor?: string;
+};
+
+export const ServicesData: Service[] = [
   {
     id: 1,
     title: "service_frontend_title",
@@ -21,6 +29,7 @@ export const ServicesData = [
     id: 4,
     title: "service_optimization_title",
     description: "service_optimization_description",
-    backgroundColor: "accent-quaternary",
+    backgroundColor: "service-accent-4",
+    iconColor: "#1D283A",
   },
 ];

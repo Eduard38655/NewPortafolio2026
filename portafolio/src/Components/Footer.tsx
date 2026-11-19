@@ -1,6 +1,7 @@
 import "i18next";
 import { useTranslation } from "react-i18next";
 import { SocialMedia } from "../../Data/SocialMedia";
+import { hasVisibleExperiences } from "./Experience";
 
 function Footer() {
   const { t } = useTranslation();
@@ -8,7 +9,9 @@ function Footer() {
   const Bar = [
     { nombre: "about", route: "#about" },
     { nombre: "projects", route: "#projects" },
-    { nombre: "experience", route: "#experience" },
+    ...(hasVisibleExperiences
+      ? [{ nombre: "experience", route: "#experience" }]
+      : []),
     { nombre: "skills", route: "#skills" },
   ];
   return (

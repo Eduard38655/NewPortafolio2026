@@ -28,7 +28,10 @@
   "technologies_heading": "Tecnologías con las que trabajo",
   "projects_heading": "Proyectos que he creado",
   "selected_work": "Proyectos destacados",
+  "featured_projects": "Proyectos principales",
+  "other_projects": "Otros proyectos",
   "live_demo": "Ver demostración",
+  "project_technologies": "Tecnologías y herramientas",
   "service_intro": "Qué puedo desarrollar",
   "services": "Servicios",
   "footer_credit": "Diseñado y desarrollado con código. © 2026",
@@ -38,8 +41,7 @@
   "email_copied": "Correo copiado",
   "my_journey": "Mi recorrido",
   "experience_period": "2025–2026",
-  "experience_role": "SPS Professional Software Services - Desarrollo web full stack",
-  "experience_description": "Experiencia práctica creando proyectos web con React, interfaces adaptables e integración de tecnologías frontend y backend.",
+  "experience_role": "SPS Professional Software Services (SPS) — Desarrollo web full stack",
   "service_frontend_title": "Desarrollo frontend",
   "service_frontend_description": "Interfaces adaptables creadas con frameworks modernos y una arquitectura basada en componentes.",
   "service_apps_title": "Aplicaciones web",
@@ -52,6 +54,7 @@
    "proyect-nom-2": "AutoMundo",
    "proyect-nom-3": "Global Gazette",
    "proyect-nom-4": "GourmetGO",
+   "proyect-nom-5": "Lavandería Olivos",
  
 
 
@@ -59,8 +62,10 @@
   "proyect-dec-2": "Portal automotriz desarrollado con React, Node.js y PostgreSQL que permite explorar vehículos y comparar sus características principales.",
   "proyect-dec-3": "Blog desarrollado con React que reúne artículos en una presentación clara y fácil de leer, para descubrir contenidos y temas de interés.",
   "proyect-dec-4": "Plataforma de comercio electrónico de alimentos para explorar productos y comprar en línea mediante una experiencia sencilla.",
+  "proyect-dec-5": "Sistema integral de gestión diseñado para optimizar y automatizar los procesos operativos y administrativos de una lavandería. Desarrollado con una arquitectura moderna, utilizando React y TypeScript en el frontend, junto con Tailwind CSS para la interfaz, Zod para la validación de datos y CASL para la gestión de permisos y control de acceso.\n\nEn el backend utiliza ASP.NET Core Minimal APIs, Dapper para el acceso y gestión eficiente de datos, y ASP.NET Core Identity para la autenticación y administración de usuarios y roles.\n\nLa solución busca ofrecer una plataforma organizada, segura y escalable, facilitando la gestión de las operaciones y el control de acceso según los permisos de cada usuario.",
   "project-image-alt-1": "Vista previa del sitio web SPS Software",
   "project-image-alt-2": "Vista previa del portal automotriz AutoMundo",
   "project-image-alt-3": "Vista previa del blog Global Gazette",
-  "project-image-alt-4": "Vista previa de la tienda de alimentos GourmetGO"
+  "project-image-alt-4": "Vista previa de la tienda de alimentos GourmetGO",
+  "project-image-alt-5": "Vista previa del sistema de gestión Lavandería Olivos"
 }

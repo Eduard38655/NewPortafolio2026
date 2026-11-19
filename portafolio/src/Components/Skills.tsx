@@ -16,7 +16,7 @@ function Skill() {
     >
       <div className="flex flex-row justify-between items-center ">
         <div>
-          <span className="inline-flex w-fit rounded-full border-2 bg-surface-header px-3 py-1 text-sm font-bold tracking-wide text-contrast-strong shadow-[5px_3px_0px_0px_#1D283A] sm:text-base">
+          <span className="inline-flex w-fit rounded-full border-2 bg-surface-header px-3 py-1 text-sm font-bold tracking-wide text-contrast-strong shadow-[5px_3px_0px_0px_var(--card-shadow)] sm:text-base">
             {t("skills")}
           </span>
           <h2 className="mt-4 text-4xl font-bold sm:text-5xl">{t("technologies_heading")}</h2>
@@ -29,10 +29,10 @@ function Skill() {
         {Tecnologias.map((tech, index) => (
           <div
             key={index}
-            className="flex flex-col items-center gap-2 rounded-lg border-2 border-outline-strong bg-surface-header p-5 shadow-[5px_3px_0px_0px_#1D283A]    transition-transform duration-200 ease-in-out hover:-rotate-3 hover:scale-105   active:rotate-3 active:scale-95"
+            className="flex flex-col items-center gap-2 rounded-lg border-2 border-outline-strong bg-surface-header p-5 shadow-[5px_3px_0px_0px_var(--card-shadow)] transition-transform duration-200 ease-in-out hover:-rotate-3 hover:scale-105 active:rotate-3 active:scale-95"
           >
             <div
-              className="flex items-center justify-center rounded-lg border p-3 shadow-[5px_3px_0px_0px_#1D283A] "
+              className="flex items-center justify-center rounded-lg border p-3 shadow-[5px_3px_0px_0px_var(--card-shadow)]"
               style={{
                 backgroundColor: `var(--${tech.color})`,
               }}

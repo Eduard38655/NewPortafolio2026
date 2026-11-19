@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useChangePalette } from "../store/useChangePalette";
 import About from "./Components/About";
-import Experience from "./Components/Experience";
+import Experience, { hasVisibleExperiences } from "./Components/Experience";
 import Footer from "./Components/Footer";
 import HeaderMenu from "./Components/Menu";
 import Proyects from "./Components/Proyects";
@@ -70,7 +70,7 @@ function App() {
         <Skills />
         <Services />
         <Proyects />
-        <Experience />
+        {hasVisibleExperiences && <Experience />}
       </main>
       <Footer />
       <WhatsAppButton />

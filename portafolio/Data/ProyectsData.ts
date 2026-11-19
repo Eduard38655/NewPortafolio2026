@@ -1,16 +1,20 @@
-import SPSsoftware from "../src/Images/SPSsoftware-CGnWAbXJ.png";
 import AutoMundo from "../src/Images/AutoMunoIMG-Chddp5Md.png";
 import GlobalGazette from "../src/Images/GlobalGazzette-P890ck_q.png";
 import GourmetGO from "../src/Images/GourmetGO-BXGKzaL9.png";
+import OlivoSystem from "../src/Images/OlivosSystem.png";
+import SPSsoftware from "../src/Images/SPSsoftware-CGnWAbXJ.png";
 
+ 
 type Project = {
   nombre: string;
   description: string;
   imageAlt: string;
   imagen: string;
   tecnologias: string[];
-  link: string;
-  demo: string;
+  featured?: boolean;
+  link?: string;
+  demo?: string;
+  youtube?: string;
 };
 
 export const Proyects: Project[] = [
@@ -49,5 +53,24 @@ export const Proyects: Project[] = [
     tecnologias: ["React"],
     link: "https://github.com/Eduard38655/E-commersePage",
     demo: "https://eduard38655.github.io/E-commersePage/",
+  },
+  {
+    nombre: "proyect-nom-5",
+    description: "proyect-dec-5",
+    imageAlt: "project-image-alt-5",
+    imagen: OlivoSystem,
+    tecnologias: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Zod",
+      "ASP.NET Core Minimal APIs",
+      "Dapper",
+      "CASL",
+      "ASP.NET Core Identity",
+    ],
+    featured: true,
+    link: "https://github.com/Eduard38655/lavanderiaOlivos",
+    youtube: "https://youtu.be/4Aq2ZnmdBy0",
   },
 ];

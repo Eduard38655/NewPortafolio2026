@@ -4,6 +4,7 @@ import { IoIosColorPalette } from "react-icons/io";
 import { Palette } from "../../Data/Paleta";
 import { useChangePalette } from "../../store/useChangePalette";
 import DialogEmail from "../Components/DialogEmail.js";
+import { hasVisibleExperiences } from "./Experience";
 function HeaderMenu() {
   const [showPalette, setShowPalette] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
@@ -21,7 +22,9 @@ function HeaderMenu() {
   const Bar = [
     { nombre: "about", route: "#about" },
     { nombre: "projects", route: "#projects" },
-    { nombre: "experience", route: "#experience" },
+    ...(hasVisibleExperiences
+      ? [{ nombre: "experience", route: "#experience" }]
+      : []),
     { nombre: "skills", route: "#skills" },
   ];
   const nombrePaleta = useChangePalette((state) => state.nombre);

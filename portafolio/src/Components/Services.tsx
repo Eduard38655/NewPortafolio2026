@@ -22,7 +22,7 @@ function Services() {
     >
       {/* Encabezado */}
       <div className="flex flex-col items-start gap-4">
-        <span className="w-fit rounded-full border-2 bg-surface-header px-3 py-2 text-lg font-bold tracking-widest text-contrast-strong shadow-[5px_3px_0px_0px_#1D283A]">
+        <span className="w-fit rounded-full border-2 bg-surface-header px-3 py-2 text-lg font-bold tracking-widest text-contrast-strong shadow-[5px_3px_0px_0px_var(--card-shadow)]">
           {t("service_intro")}
         </span>
 
@@ -41,19 +41,23 @@ function Services() {
           return (
             <article
               key={service.id ?? service.title ?? index}
-              className="flex flex-col gap-5 rounded-lg border-2 border-outline-strong bg-surface-header p-5 shadow-[3px_3px_0px_0px_#1D283A] hover:shadow-[5px_3px_0px_0px_#1D283A]"
+              className="flex flex-col gap-5 rounded-lg border-2 border-outline-strong bg-surface-header p-5 shadow-[3px_3px_0px_0px_var(--card-shadow)] transition-shadow duration-200 hover:shadow-[5px_3px_0px_0px_var(--card-shadow)]"
+              style={{
+                backgroundColor: "color-mix(in srgb, var(--surface-header) 88%, var(--action-primary))",
+              }}
             >
               <div className="flex items-center justify-between">
                 <div
                   className="rounded-lg border-2 border-outline-strong p-4 text-2xl"
                   style={{
                     backgroundColor: `var(--${service.backgroundColor})`,
+                    color: service.iconColor ?? "var(--icon-content)",
                   }}
                 >
                   <Icon aria-hidden="true" />
                 </div>
 
-                <span className="text-3xl font-bold text-content-muted">
+                <span className="text-3xl font-bold text-action-primary/70">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>

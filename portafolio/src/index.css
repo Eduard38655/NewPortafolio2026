@@ -68,6 +68,7 @@
   --color-service-accent-2: var(--service-accent-2);
   --color-service-accent-3: var(--service-accent-3);
   --color-service-accent-4: var(--service-accent-4);
+  --color-card-shadow: var(--card-shadow);
 }
 
 /* ========================================
@@ -75,6 +76,7 @@
 ======================================== */
 
 [data-theme="violeta"] {
+  --card-shadow: rgba(29, 40, 58, 0.28);
   --pattern-dot: #E9D5FF;
   --accent-primary: #8B5CF6;
   --canvas: #FFF7F0;
@@ -111,6 +113,7 @@
 ======================================== */
 
 [data-theme="ocean"] {
+  --card-shadow: rgba(15, 23, 42, 0.24);
   --pattern-dot: #BAE6FD;
   --accent-primary: #0284C7;
   --canvas: #F0F9FF;
@@ -147,6 +150,7 @@
 ======================================== */
 
 [data-theme="Atardecer"] {
+  --card-shadow: rgba(29, 40, 58, 0.24);
   --pattern-dot: #99F6E4;
   --accent-primary: #14B8A6;
   --canvas: #FFF7F0;
@@ -183,6 +187,7 @@
 ======================================== */
 
 [data-theme="Bosque"] {
+  --card-shadow: rgba(20, 48, 31, 0.24);
   --pattern-dot: #A7F3D0;
   --accent-primary: #059669;
   --canvas: #F6FBF6;
@@ -218,6 +223,7 @@
    5. GRAFITOS
 ======================================== */
 [data-theme="Grafitos"] {
+  --card-shadow: rgba(15, 23, 42, 0.42);
   --pattern-dot: #59636D;
   --accent-primary: #FBBF24;
   --canvas: #363C43;
