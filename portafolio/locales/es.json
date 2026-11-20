@@ -55,6 +55,8 @@
    "proyect-nom-3": "Global Gazette",
    "proyect-nom-4": "GourmetGO",
    "proyect-nom-5": "Lavandería Olivos",
+   "proyect-nom-6": "Huevos Ferreras",
+   "proyect-nom-7": "Nexora Technologies",
  
 
 
@@ -63,9 +65,13 @@
   "proyect-dec-3": "Blog desarrollado con React que reúne artículos en una presentación clara y fácil de leer, para descubrir contenidos y temas de interés.",
   "proyect-dec-4": "Plataforma de comercio electrónico de alimentos para explorar productos y comprar en línea mediante una experiencia sencilla.",
   "proyect-dec-5": "Sistema integral de gestión diseñado para optimizar y automatizar los procesos operativos y administrativos de una lavandería. Desarrollado con una arquitectura moderna, utilizando React y TypeScript en el frontend, junto con Tailwind CSS para la interfaz, Zod para la validación de datos y CASL para la gestión de permisos y control de acceso.\n\nEn el backend utiliza ASP.NET Core Minimal APIs, Dapper para el acceso y gestión eficiente de datos, y ASP.NET Core Identity para la autenticación y administración de usuarios y roles.\n\nLa solución busca ofrecer una plataforma organizada, segura y escalable, facilitando la gestión de las operaciones y el control de acceso según los permisos de cada usuario.",
+  "proyect-dec-6": "Sitio web comercial adaptable para presentar el catálogo, las categorías y los servicios de Huevos Ferreras, con consultas directas por WhatsApp.",
+  "proyect-dec-7": "Sitio corporativo para Nexora Technologies que presenta sus servicios de desarrollo de software, ERP, inteligencia artificial, integraciones y soporte tecnológico.",
   "project-image-alt-1": "Vista previa del sitio web SPS Software",
   "project-image-alt-2": "Vista previa del portal automotriz AutoMundo",
   "project-image-alt-3": "Vista previa del blog Global Gazette",
   "project-image-alt-4": "Vista previa de la tienda de alimentos GourmetGO",
-  "project-image-alt-5": "Vista previa del sistema de gestión Lavandería Olivos"
+  "project-image-alt-5": "Vista previa del sistema de gestión Lavandería Olivos",
+  "project-image-alt-6": "Vista previa del sitio web de Huevos Ferreras",
+  "project-image-alt-7": "Vista previa del sitio web de Nexora Technologies"
 }

@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useChangePalette } from "../store/useChangePalette";
 import About from "./Components/About";
-import Experience, { hasVisibleExperiences } from "./Components/Experience";
+import Experience from "./Components/Experience";
+import { hasVisibleExperiences } from "./Data/ExperienceData";
 import Footer from "./Components/Footer";
 import HeaderMenu from "./Components/Menu";
 import Proyects from "./Components/Proyects";
@@ -22,6 +23,10 @@ function App() {
 
     document.documentElement.lang = language;
     document.title = title;
+    document.querySelector('meta[property="og:locale"]')?.setAttribute(
+      "content",
+      language.startsWith("en") ? "en_US" : "es_DO",
+    );
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
@@ -48,14 +53,29 @@ function App() {
     }
     personSchema.textContent = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      name: t("name"),
-      jobTitle: t("title"),
-      description,
-      url: canonicalUrl,
-      image: socialImage,
-      knowsAbout: ["React", "TypeScript", "Node.js", "PostgreSQL", "SQL Server", ".NET", "Tailwind CSS"],
-      sameAs: ["https://github.com/Eduard38655"],
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": `${canonicalUrl}#person`,
+          name: t("name"),
+          jobTitle: t("title"),
+          description,
+          url: canonicalUrl,
+          image: socialImage,
+          email: "mailto:eduao154@gmail.com",
+          knowsAbout: ["React", "TypeScript", "Node.js", "PostgreSQL", "SQL Server", ".NET", "Tailwind CSS"],
+          sameAs: ["https://github.com/Eduard38655"],
+        },
+        {
+          "@type": "WebSite",
+          "@id": `${canonicalUrl}#website`,
+          url: canonicalUrl,
+          name: t("name"),
+          description,
+          inLanguage: language,
+          author: { "@id": `${canonicalUrl}#person` },
+        },
+      ],
     });
   }, [i18n.language, i18n.resolvedLanguage, t]);
 

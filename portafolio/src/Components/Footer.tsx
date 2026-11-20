@@ -1,7 +1,7 @@
 import "i18next";
 import { useTranslation } from "react-i18next";
 import { SocialMedia } from "../../Data/SocialMedia";
-import { hasVisibleExperiences } from "./Experience";
+import { hasVisibleExperiences } from "../Data/ExperienceData";
 
 function Footer() {
   const { t } = useTranslation();

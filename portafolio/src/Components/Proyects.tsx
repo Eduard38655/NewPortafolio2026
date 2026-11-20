@@ -38,6 +38,8 @@ function PersonalProyects() {
                   alt={t(pro.imageAlt)}
                   loading="lazy"
                   decoding="async"
+                  width="960"
+                  height="540"
                   className="aspect-video w-full rounded-xl border-2 border-outline-strong bg-canvas object-cover object-center shadow-[3px_3px_0px_0px_var(--card-shadow)]"
                 />
                 <div className="flex min-w-0 flex-col gap-5">
@@ -95,6 +97,8 @@ function PersonalProyects() {
                       alt={t(pro.imageAlt)}
                       loading="lazy"
                       decoding="async"
+                      width="160"
+                      height="96"
                       className="h-[5.5rem] w-32 rounded-lg border border-outline-strong bg-canvas object-cover sm:h-[5.5rem] sm:w-36 xl:h-24 xl:w-40"
                     />
                     <div className="flex min-w-0 flex-col gap-1">

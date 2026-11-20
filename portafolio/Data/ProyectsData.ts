@@ -3,6 +3,8 @@ import GlobalGazette from "../src/Images/GlobalGazzette-P890ck_q.png";
 import GourmetGO from "../src/Images/GourmetGO-BXGKzaL9.png";
 import OlivoSystem from "../src/Images/OlivosSystem.png";
 import SPSsoftware from "../src/Images/SPSsoftware-CGnWAbXJ.png";
+import HuevosFerreras from "../src/Images/HuevosFerreras.webp";
+import NexoraTech from "../src/Images/NexoraTech.webp";
 
  
 type Project = {
@@ -72,5 +74,21 @@ export const Proyects: Project[] = [
     featured: true,
     link: "https://github.com/Eduard38655/lavanderiaOlivos",
     youtube: "https://youtu.be/4Aq2ZnmdBy0",
+  },
+  {
+    nombre: "proyect-nom-6",
+    description: "proyect-dec-6",
+    imageAlt: "project-image-alt-6",
+    imagen: HuevosFerreras,
+    tecnologias: ["HTML", "CSS", "JavaScript"],
+    demo: "https://huevos-fereras.netlify.app/",
+  },
+  {
+    nombre: "proyect-nom-7",
+    description: "proyect-dec-7",
+    imageAlt: "project-image-alt-7",
+    imagen: NexoraTech,
+    tecnologias: ["React", "TypeScript", "Tailwind CSS"],
+    demo: "https://nexoras-tech.netlify.app/#servicios",
   },
 ];

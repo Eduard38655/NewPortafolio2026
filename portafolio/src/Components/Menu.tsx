@@ -4,7 +4,7 @@ import { IoIosColorPalette } from "react-icons/io";
 import { Palette } from "../../Data/Paleta";
 import { useChangePalette } from "../../store/useChangePalette";
 import DialogEmail from "../Components/DialogEmail.js";
-import { hasVisibleExperiences } from "./Experience";
+import { hasVisibleExperiences } from "../Data/ExperienceData";
 function HeaderMenu() {
   const [showPalette, setShowPalette] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);

@@ -55,6 +55,8 @@
    "proyect-nom-3": "Global Gazette",
    "proyect-nom-4": "GourmetGO",
    "proyect-nom-5": "Lavandería Olivos",
+   "proyect-nom-6": "Huevos Ferreras",
+   "proyect-nom-7": "Nexora Technologies",
  
 
 
@@ -63,9 +65,13 @@
   "proyect-dec-3": "A React blog presenting articles in a clear, reader-friendly format to help visitors discover useful content and topics of interest.",
   "proyect-dec-4": "A food e-commerce platform where visitors can browse products and shop online through a straightforward experience.",
   "proyect-dec-5": "Comprehensive management system designed to optimize and automate a laundry's operational and administrative processes. Built with a modern architecture using React and TypeScript on the frontend, alongside Tailwind CSS for the interface, Zod for data validation, and CASL for permission management and access control.\n\nThe backend uses ASP.NET Core Minimal APIs, Dapper for efficient data access and management, and ASP.NET Core Identity for authentication and administration of users and roles.\n\nThe solution aims to provide an organized, secure, and scalable platform, facilitating operations management and access control according to each user's permissions.",
+  "proyect-dec-6": "A responsive commercial website for presenting the Huevos Ferreras catalog, product categories, and services, with direct inquiries through WhatsApp.",
+  "proyect-dec-7": "A corporate website for Nexora Technologies showcasing software development, ERP, artificial intelligence, integrations, and technology support services.",
   "project-image-alt-1": "Preview of the SPS Software website",
   "project-image-alt-2": "Preview of the AutoMundo automotive portal",
   "project-image-alt-3": "Preview of the Global Gazette blog",
   "project-image-alt-4": "Preview of the GourmetGO food store",
-  "project-image-alt-5": "Preview of the Lavandería Olivos management system"
+  "project-image-alt-5": "Preview of the Lavandería Olivos management system",
+  "project-image-alt-6": "Preview of the Huevos Ferreras website",
+  "project-image-alt-7": "Preview of the Nexora Technologies website"
   }
