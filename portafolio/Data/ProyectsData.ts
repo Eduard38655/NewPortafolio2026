@@ -16,6 +16,7 @@ type Project = {
   featured?: boolean;
   link?: string;
   demo?: string;
+  demoUser?: string;
   youtube?: string;
 };
 
@@ -73,6 +74,8 @@ export const Proyects: Project[] = [
     ],
     featured: true,
     link: "https://github.com/Eduard38655/lavanderiaOlivos",
+    demo: "https://loquacious-faun-db9a53.netlify.app/dashboard",
+    demoUser: "example@example.come",
     youtube: "https://youtu.be/4Aq2ZnmdBy0",
   },
   {

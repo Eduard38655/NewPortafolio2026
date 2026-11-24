@@ -70,9 +70,16 @@ function PersonalProyects() {
                       </a>
                     )}
                     {pro.demo && (
-                      <a href={pro.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border-2 border-outline-strong px-4 py-2 text-sm font-bold transition-colors hover:bg-action-hover">
-                        <TfiNewWindow aria-hidden="true" /> {t("live_demo")}
-                      </a>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <a href={pro.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border-2 border-outline-strong px-4 py-2 text-sm font-bold transition-colors hover:bg-action-hover">
+                          <TfiNewWindow aria-hidden="true" /> {t("live_demo")}
+                        </a>
+                        {pro.demoUser && (
+                          <p className="text-sm text-content-secondary">
+                            {t("demo_user")}: <span className="font-semibold">{pro.demoUser}</span>
+                          </p>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>
